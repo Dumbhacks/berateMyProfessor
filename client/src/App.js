@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Questions from './questions';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Link to="/answers">answers</Link>
       <Switch>
       <Route path="/questions">
-        <p>hello world questions</p>
+        <Questions />
       </Route>
       <Route path="/answers">
         <p>hello world answers</p>
