@@ -1,3 +1,35 @@
+@media (max-width: 600px) {
+  body {
+  background-color: lightblue;
+  }
+  }
+
+
 .App {
   text-align: center;
+}
+
+body {
+  background-color:thistle;
+}
+h1,h2 {
+  text-align: center;
+}
+h1 {
+  font-size: 10em;
+}
+
+#maincontent {
+  margin:0px;
+  padding:25px 0%;
+}
+#questions, #answers {
+  background-color: white;
+  margin:30px auto;
+  width:50%;
+  padding:10px;
+}
+
+.hide {
+  background-color: tomato;
 }
