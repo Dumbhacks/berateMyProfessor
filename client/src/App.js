@@ -28,24 +28,25 @@ class Component1 extends React.Component {
 function App() {
   
   return (
-    
-    <Router>
-      {/* <div id="header"></div> */}
-      
+    <body >
+      <Router>
+        {/* <div id="header"></div> */}
+        
 
-      <Switch>
-        <Route path="/questions">
-          <Questions />
-        </Route>
-        <Route path="/answers">
-          <p>hello world answers</p>
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path="/questions">
+            <Questions />
+          </Route>
+          <Route path="/answers">
+            <p>hello world answers</p>
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
 
-    </Router>
+      </Router>
+    </body>
   );
 }
 
