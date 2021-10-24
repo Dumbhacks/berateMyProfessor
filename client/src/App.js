@@ -37,8 +37,7 @@ function App({fromQuestionsß}) {
           <Route path="/answers">
             <p>hello world answers</p>
           </Route>
-          <Route path="/auth">
-            <Auth />
+          <Route path="/auth/:next" component={Auth}>
           </Route>
           <Route path="/">
             <Home />
