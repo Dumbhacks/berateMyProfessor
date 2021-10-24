@@ -13,7 +13,7 @@ class Component1 extends React.Component {
     return (
         <div className="wrapper">
           <MetaTags>
-            <title>Page 1</title>
+            <title>BerateMyProfessor</title>
             <meta name="description" content="Some description." />
             <meta name="viewport" content="width=devicewidth, initial-scale=1.0"></meta>
           </MetaTags>
@@ -29,8 +29,6 @@ function App() {
     
     <Router>
       {/* <div id="header"></div> */}
-      
-      <div class="hide">
         <Switch>
 
           <Route path="/questions">
@@ -43,7 +41,6 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      </div>
     </Router>
   );
 }
