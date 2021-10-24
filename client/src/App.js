@@ -11,6 +11,8 @@ import MetaTags from 'react-meta-tags';
 import Questions from './questions';
 import Auth from './Auth'
 class Component1 extends React.Component {
+
+  
   render() {
     return (
         <div className="wrapper">

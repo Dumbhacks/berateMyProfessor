@@ -17,12 +17,10 @@ import authkey from './authkey.js';
 class Auth extends Component {
     constructor(props) {
         super(props);
-        console.log(this.props.match.params.next,"this is next pr")
 }
     responseGoogle=(response)=>{
         var profile = response.getBasicProfile();
         
-        console.log('Welcome, ' + profile.getName());
         console.log(response);
         console.log(response.profileObj);
         console.log("this is my status hello hello: " + this.props.match.params.next);
@@ -37,18 +35,22 @@ class Auth extends Component {
     render() { 
 
         return (
-            
-            <div id="login">
-                <div>{this.props.status}</div>
-                <GoogleLogin 
-                clientId={authkey}
-                buttonText="Sign in with Google"
-                isSignedIn={true}
-                onSuccess={this.responseGoogle}
-                onFailure={this.responseGoogle}
-                cookiePolicy={'single_host_origin'}
-            />
-            </div>
+            <body>
+                <div id="auth_content"></div>
+                <div id="login_container">
+                <div id="login">
+                    <div>{this.props.status}</div>
+                    <GoogleLogin 
+                    clientId={authkey}
+                    buttonText="Sign in with Google"
+                    isSignedIn={true}
+                    onSuccess={this.responseGoogle}
+                    onFailure={this.responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                    />
+                </div>
+                </div>
+            </body>
             
             
         )

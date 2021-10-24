@@ -67,10 +67,10 @@ class Questions extends React.Component {
     
     render() {
       return (
-        <Container>
-          <Row >
-          <Col  sm='2'/>
-          <Col>
+        <Container id="main">
+          <Row id="line">
+          <Col sm='2'/>
+          <Col id>
             <Row className="g-2">
               <Col sm='2'/>
               <Col >
@@ -94,6 +94,8 @@ class Questions extends React.Component {
             </Row>
             <Form onSubmit={e=>{e.preventDefault();this.handleSubmit()}}>
               <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+              <Col id="spacing"></Col>
+
                 <Form.Label>Write your questions here</Form.Label>
                 <Form.Control as="textarea" rows={3} value={this.state.message} onChange={this.handleMessageChange}  />
               </Form.Group>
