@@ -5,26 +5,24 @@ const bodyParser = require('body-parser');
 // create application/json parser
 var jsonParser = bodyParser.json()
 
-// create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+// // create application/x-www-form-urlencoded parser
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // create App function
 module.exports = function(app) {
     var rooms = require('../controllers/controllers.js');
 
-    app.get("/rooms", urlencodedParser, (req, res) => {
+    app.get("/rooms", jsonParser, (req, res) => {
       Room.find({}, (err, room) => {
-        console.log("list all rooms")
         if (err) {
         res.status(500).send(err);
         }
         res.status(200).json(room);
         });
       })
-    .post("/rooms", urlencodedParser, (req, res) => {
-      console.log(req.body);
+
+    app.post("/rooms", jsonParser, (req, res) => {
       let newRoom = new Room(req.body);
-      console.log("create new room");
       newRoom.save((err, room) => {
       if (err) {
         res.status(500).send(err);
@@ -32,4 +30,14 @@ module.exports = function(app) {
       res.status(201).send(req.body);
       });
     });
+
+    app.post("/question/:roomid", jsonParser, (req, res) => {
+      console.log(req.body, req.params.roomid);
+      Room.findOneAndUpdate({"roomID": req.params.roomid},
+        {"$addToSet":{"questions":req.body}}, (err) => {
+          // console.log("uh oh");
+          // console.log(err);
+          res.status(500).send(err);
+        });
+    })
 }

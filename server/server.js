@@ -8,7 +8,7 @@ const  bodyParser = require("body-parser");
 const  app = express();
 
 // define port to run express app
-const  port = process.env.PORT || 5050;
+const  port = process.env.PORT || 5051;
 
 // Import DB Connection
 require("./config/db");
