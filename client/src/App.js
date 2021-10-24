@@ -8,6 +8,7 @@ import {
 import Home from './Home.js';
 import React from 'react';
 import MetaTags from 'react-meta-tags';
+import Questions from './questions';
 class Component1 extends React.Component {
   render() {
     return (
@@ -23,16 +24,16 @@ class Component1 extends React.Component {
   }
 }
 
+
 function App() {
   
   return (
-    
-    <Router>
-      {/* <div id="header"></div> */}
+    <body >
+      <Router>
+        {/* <div id="header"></div> */}
         <Switch>
-
           <Route path="/questions">
-            <p>hello world questions</p>
+            <Questions />
           </Route>
           <Route path="/answers">
             <p>hello world answers</p>
@@ -41,7 +42,8 @@ function App() {
             <Home />
           </Route>
         </Switch>
-    </Router>
+      </Router>
+    </body>
   );
 }
 
