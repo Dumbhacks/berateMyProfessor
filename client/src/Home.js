@@ -7,13 +7,24 @@ import {
 import React, {Component} from 'react';
 import './App.css';
 import MetaTags from 'react-meta-tags'; 
-
+import Auth from './Auth.js';
 
 class Home extends Component {
     constructor(props) {
         super(props);
+        this.state = {goto: ""};
+    }
+    changeQuestion = () => {
+        this.setState(()=>{
+            return {goto: "questions"}
+        });
     }
 
+    changeAnswer = () => {
+        this.setState(()=>{
+            return {goto: "answers"}
+        });
+    }
     render() {
         return (
             <body>
@@ -24,12 +35,12 @@ class Home extends Component {
 
                 {/* questions */}
                 <div id="questions">
-                    <Link to="/auth" style={{ textDecoration: 'none' }}><h2>Questions</h2></Link>
+                    <Link onClick={this.changeQuestion} to="/auth/questions" style={{ textDecoration: 'none' }}><h2>Questions</h2></Link>
                 </div>
 
                 {/* answers */}
                 <div id="answers">
-                    <Link to="/auth" style={{ textDecoration: 'none' }}><h2>Answers</h2></Link>
+                    <Link onClick={this.changeAnswer} to="/auth/answers" style={{ textDecoration: 'none' }}><h2>Answers</h2></Link>
                 </div>
             </div>
         </body>
