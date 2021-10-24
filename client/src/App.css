@@ -1,3 +1,49 @@
-.App {
+/* phone display */
+@media (max-width: 800px) {
+  body {
+    background-color: lightblue;
+  }
+  h1 {
+    font-size: 5em;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Sora:wght@600&display=swap');
+body {
+  background-color: #f6e397;
+  background-size:cover;
+  background-image: url("img/shapes3.png");
+  /* background-repeat: space; */
+  color:#5e817d;
+}
+
+h2 {
   text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+#header h1 {
+  font-size: 10em;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+
+}
+
+#maincontent {
+  /* margin:0px; */
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#questions, #answers {
+  background-color: #6b6a69;
+  margin:30px auto;
+  padding:10px;
+}
+
+#maincontent h2 {
+  color: white;
 }
